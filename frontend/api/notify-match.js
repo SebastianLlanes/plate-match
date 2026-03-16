@@ -152,7 +152,7 @@ async function sendMatchEmail({ apiKey, to, role, plate, otherContact, city, pro
     },
     body: JSON.stringify({
       from: "ChapaMatch <onboarding@resend.dev>",
-      to: [to],
+      to: ["sebastianllanessaavedra@gmail.com"], // sandbox temporal
       subject,
       html,
     }),
