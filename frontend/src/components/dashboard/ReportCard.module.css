@@ -1,0 +1,70 @@
+.card {
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--color-surface);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 12px;
+  transition: transform 0.15s ease;
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.plate {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  background: #eee;
+}
+
+.location {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+.status {
+  font-size: 14px;
+}
+
+/* Estados */
+
+.active {
+  border-left: 4px solid #f59e0b;
+}
+
+.matched {
+  border-left: 4px solid #10b981;
+}
+
+.closed {
+  border-left: 4px solid #9ca3af;
+}
+
+.closeBtn {
+  margin-top: 10px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background: #ef4444;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.closeBtn:active {
+  transform: scale(0.97);
+}

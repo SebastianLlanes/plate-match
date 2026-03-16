@@ -1,0 +1,142 @@
+.container {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-background);
+  padding: var(--spacing-lg);
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  animation: fadeIn 0.4s ease;
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text);
+}
+
+.subtitle {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-muted);
+}
+
+.googleButton {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.googleButton:hover {
+  background: var(--color-background);
+}
+
+.divider {
+  margin: var(--spacing-lg) 0;
+  text-align: center;
+  position: relative;
+  font-size: var(--font-size-xs);
+  color: var(--color-muted);
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.form input {
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  font-size: var(--font-size-sm);
+  transition: border 0.2s ease;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: var(--color-primary-light);
+}
+
+.form button {
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  border: none;
+  background: var(--color-primary-light);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.form button:hover {
+  background: var(--color-primary);
+}
+
+.error {
+  font-size: var(--font-size-xs);
+  color: var(--color-danger);
+  text-align: center;
+}
+
+.toggle {
+  margin-top: var(--spacing-md);
+  text-align: center;
+  font-size: var(--font-size-sm);
+}
+
+.toggle span {
+  font-weight: 600;
+  color: var(--color-primary-light);
+  cursor: pointer;
+  margin-left: var(--spacing-xs);
+}
+
+.toggle span:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

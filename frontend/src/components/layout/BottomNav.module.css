@@ -1,0 +1,87 @@
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: var(--color-background);
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 8px;
+  z-index: 100;
+  /* Safe area para iPhones con notch */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Items normales */
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex: 1;
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: color 0.2s ease;
+  padding: 8px 0;
+}
+
+.item.active {
+  color: #111827;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  color: var(--color-primary);
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+/* Botón central de acción */
+.actionItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex: 1;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 4px 0;
+}
+
+.actionButton {
+  width: 44px;
+  height: 44px;
+  background: var(--color-primary-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.actionButton svg {
+  width: 20px;
+  height: 20px;
+  color: #ffffff;
+}
+
+.actionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.actionLabel {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--color-primary);
+}

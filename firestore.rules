@@ -1,0 +1,39 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /reports/{reportId} {
+      allow read: if request.auth != null &&
+        request.auth.uid == resource.data.userId;
+
+      allow create: if request.auth != null &&
+        request.auth.uid == request.resource.data.userId;
+
+      allow update: if request.auth != null &&
+        request.auth.uid == resource.data.userId &&
+        request.resource.data.userId == resource.data.userId;
+
+      allow delete: if false;
+    }
+
+    match /matches/{matchId} {
+      allow read: if request.auth != null && (
+        request.auth.uid == resource.data.lostUserId ||
+        request.auth.uid == resource.data.foundUserId
+      );
+
+      // Cliente crea matches pero solo si es participante
+      allow create: if request.auth != null && (
+        request.auth.uid == request.resource.data.lostUserId ||
+        request.auth.uid == request.resource.data.foundUserId
+      );
+
+      allow update: if request.auth != null && (
+        request.auth.uid == resource.data.lostUserId ||
+        request.auth.uid == resource.data.foundUserId
+      );
+
+      allow delete: if false;
+    }
+  }
+}

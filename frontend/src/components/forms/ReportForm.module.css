@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+.hint {
+  font-size: 13px;
+  color: #6b7280;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 10px 14px;
+  line-height: 1.5;
+}
+
+.error {
+  font-size: 13px;
+  color: #dc2626;
+  margin-top: -4px;
+}
