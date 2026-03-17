@@ -3,20 +3,24 @@ service cloud.firestore {
   match /databases/{database}/documents {
 
     match /reports/{reportId} {
-       allow list: if request.auth != null;
-        
-        allow read: if request.auth != null &&
-          request.auth.uid == resource.data.userId;
+  allow list: if request.auth != null;
 
-      allow create: if request.auth != null &&
-        request.auth.uid == request.resource.data.userId;
+  allow read: if request.auth != null &&
+    request.auth.uid == resource.data.userId;
 
-      allow update: if request.auth != null &&
-        request.auth.uid == resource.data.userId &&
-        request.resource.data.userId == resource.data.userId;
+  allow create: if request.auth != null &&
+    request.auth.uid == request.resource.data.userId;
 
-      allow delete: if false;
-    }
+  allow update: if request.auth != null && (
+    // Dueño del reporte puede actualizar todo
+    request.auth.uid == resource.data.userId ||
+    // Cualquier usuario autenticado puede marcar un reporte como matched
+    (request.resource.data.diff(resource.data).affectedKeys()
+      .hasOnly(['status', 'matchId']))
+  );
+
+  allow delete: if false;
+}
 
       match /matches/{matchId} {
       // Permitir query para verificar matches existentes por patente
