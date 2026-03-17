@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
+import { initializeAppCheck, ReCaptchaEnterpriseProvider } from "firebase/app-check";
 import { getToken } from "firebase/app-check";
 
 const firebaseConfig = {
@@ -16,7 +16,7 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig); // 1️⃣ primero
 
 initializeAppCheck(app, {
-  provider: new ReCaptchaV3Provider(import.meta.env.VITE_RECAPTCHA_SITE_KEY),
+  provider: new ReCaptchaEnterpriseProvider(import.meta.env.VITE_RECAPTCHA_SITE_KEY),
   isTokenAutoRefreshEnabled: true,
   // No bloquear si App Check falla
   forceRefresh: false,
