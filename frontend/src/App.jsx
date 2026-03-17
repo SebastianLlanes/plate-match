@@ -17,6 +17,7 @@ import MatchesPage from "./pages/MatchesPage";
 import SuccessPage from "./pages/SuccessPage";
 import DashboardPage from "./pages/DashboardPage";
 import ProfilePage from "./pages/ProfilePage";
+import NotFoundPage from "./pages/404Page";
 
 import ProtectedRoute from "./pages/ProtectedRoute";
 import PublicRoute from "./pages/PublicRoute";
@@ -103,6 +104,7 @@ function AppContent() {
               </ProtectedRoute>
             }
           />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Container>
       <BottomNav />
