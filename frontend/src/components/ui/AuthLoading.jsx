@@ -1,3 +1,4 @@
+import Logo from "./Logo";
 import styles from "./AuthLoading.module.css";
 
 export default function AuthLoading() {
@@ -6,7 +7,9 @@ export default function AuthLoading() {
       <div className={styles.track}>
         <div className={styles.bar} />
       </div>
-      <div className={styles.logo}>TuLogo</div>
+      <div className={styles.logo}>
+        <Logo />
+      </div>
     </div>
   );
 }
