@@ -123,7 +123,7 @@ async function sendMatchEmail({ apiKey, to, role, plate, otherContact, city, pro
           </tr>
           <tr>
             <td style="padding-bottom:28px;text-align:center">
-              <a href="https://plate-match.vercel.app/dashboard"
+              <a href="https://www.chapamatch.com.ar/dashboard"
                 style="display:inline-block;background:#111827;color:#ffffff;font-size:14px;font-weight:600;padding:12px 28px;border-radius:10px;text-decoration:none">
                 Ver en ChapaMatch
               </a>
@@ -151,8 +151,8 @@ async function sendMatchEmail({ apiKey, to, role, plate, otherContact, city, pro
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "ChapaMatch <onboarding@resend.dev>",
-      to: ["sebastianllanessaavedra@gmail.com"], // sandbox temporal
+      from: "ChapaMatch <noreply@chapamatch.com.ar>",
+      to: [to], 
       subject,
       html,
     }),
